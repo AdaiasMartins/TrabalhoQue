@@ -20,7 +20,7 @@ public class DequeString implements Iterable<String>{
 
   public void push_front(String item){
     No tmp = new No();
-    tbmp.dado - item;
+    tmp.dado = item;
 
     tmp.ant = Sentinela;
     tmp.prox = Sentinela.prox;
@@ -43,7 +43,7 @@ public class DequeString implements Iterable<String>{
   }
 
 
-  public Stirng pop_front(){
+  public String pop_front(){
     No tmp = Sentinela.prox;
     String meuDado = tmp.dado;
     tmp.ant.prox = tmp.prox;
@@ -136,8 +136,10 @@ public class DequeString implements Iterable<String>{
 
     public String toString(){
       StringBuilder s  = new StringBuilder();
-      for(String item : this)
+      for (DequeIterator it = this; it.hasNext(); ) {
+        String item = it.next();
         s.append(item+ " ");
+      }
       return s.toString();
     }
       
