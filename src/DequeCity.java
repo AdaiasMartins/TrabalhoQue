@@ -209,7 +209,7 @@ public class DequeCity implements Iterable<Cidade>{
     }
 
     public Iterable<String> keys() {
-        Deque<String> queue = new Deque<String>();
+        DequeString queue = new DequeString();
         for (No x = Sentinela.prox; x != Sentinela; x = x.prox)
             queue.push_back(x.chave);
         return queue;
@@ -226,7 +226,7 @@ public class DequeCity implements Iterable<Cidade>{
             int total = Integer.parseInt(br.readLine());
 
             int temperature = 0;
-            StdOut.println(" Total = "+total);
+            System.out.println(" Total = "+total);
             DequeCity st = new DequeCity();
 
             for (int i = 0; i<total; i++){
@@ -239,18 +239,18 @@ public class DequeCity implements Iterable<Cidade>{
             }
             br.close();
             in1.close();
-            StdOut.println("-----Testando--- Procure afterword");
-            StdOut.println(st.get("afterword"));
-            StdOut.println("-----Testando--- Procure Feeney");
-            StdOut.println(st.get("Feeney"));
-            StdOut.println("-----testando--- Procure Fee");
-            StdOut.println(st.get("fee"));
+            System.out.println("-----Testando--- Procure afterword");
+            System.out.println(st.get("afterword"));
+            System.out.println("-----Testando--- Procure Feeney");
+            System.out.println(st.get("Feeney"));
+            System.out.println("-----testando--- Procure Fee");
+            System.out.println(st.get("fee"));
 
             in1 = new FileReader(args[1]);
             br =new BufferedReader(in1);
 
             total = Integer.parseInt(br.readLine());
-            for (int i = 0; 1 < total; i++){
+            for (int i = 0; i < total; i++){
                 String tmp = br.readLine();
                 StringTokenizer tk = new StringTokenizer(tmp);
                 Cidade myCity = st.get(tk.nextToken());
@@ -263,7 +263,7 @@ public class DequeCity implements Iterable<Cidade>{
 
             br.close();
             in1.close();
-            //System.out.println(st.keys());
+//            System.out.println(st.keys());
 
 
         }catch (IOException e){
